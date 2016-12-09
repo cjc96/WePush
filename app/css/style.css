@@ -1,0 +1,115 @@
+.grey-frame {
+  border-color: gray;
+  border-style: solid;
+  width: 100%;
+  height: 600px;
+  overflow: auto;
+}
+
+.dark-frame {
+  border-color: #262626;
+  border-style: solid;
+  background-color: #262626;
+  width: 100%;
+  height: 600px;
+}
+
+.right-bottom {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.my_container {
+  float: left;
+  width: 100%;
+}
+
+.bottom_one {
+	position: absolute;
+	bottom: 20px;
+  left: 20px;
+	width: 100%;
+}
+
+.myDevices {
+  
+}
+
+.input_wrapper {
+	margin:20px;
+	text-align: right;
+}
+
+@-webkit-keyframes bluePulse {
+  from { background: #337AB7; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background: #28E7F1; -webkit-box-shadow: 0 0 18px #28E7F1; }
+  to { background: #337AB7; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+.radio_button {
+  padding: 22px 83px 14px 83px;
+  background: #337AB7;
+  text-align: center;
+  -webkit-animation-name: bluePulse;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.oneDevice {
+  background-color: silver;
+  height: 70px;
+  width: 100%;
+}
+
+.oneDevice:hover {
+  background-color: gray;
+}
+
+.control_button {
+  color: silver;
+}
+
+.control_button:hover {
+  color: gray;
+}
+
+.deviceActive {
+  background-color: gray;
+}
+
+.messageTime {
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.messageContent {
+  font-size: 20px;
+  color: black;
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.messageOut {
+  border: 3px solid #A0E75A;
+  background-color: #A0E75A;
+  border-radius: 5px;
+  width: 70%;
+  float: right;
+  margin: 10px;
+  clear:both;
+  -webkit-app-region: no-drag;
+}
+
+.messageIn {
+  border: 3px solid #337AB7;
+  background-color: #337AB7;
+  border-radius: 5px;
+  width: 70%;
+  clear: both;
+  margin: 10px;
+  -webkit-app-region: no-drag;
+}

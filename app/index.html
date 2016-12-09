@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>WePush</title>
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/elusive-webfont.css">
+    <link rel="stylesheet" href="css/wheelmenu.css">
+    <!-- <link rel="stylesheet" href="css/gb_button.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/jquery.wheelmenu.js"></script>
+    <script>if (window.module) module = window.module;</script>
+  </head>
+  <body>
+    <div class="my_container">
+
+      <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="margin-top:150px; width:300px">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+              <h4 class="modal-title" id="myModalLabel" style="text-align: center">
+                登陆
+              </h4>
+            </div>
+            <form action="" method='post'>
+              <div class="modal-body">
+                <div class='input_wrapper'>
+                  <span>用户名：</span><input name='username' type="text" id='username'>  
+                </div>
+                <div class='input_wrapper'>
+                  <span>密码：</span><input name='password' type="password" id='password'>  
+                </div>
+                <div class="input_wrapper">
+                  <span>设备名：</span><input name='description' type="text" id='description'>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-warning" id='registerClient'>注册</button>
+                <button type="button" class="btn btn-primary" id='usrLogin'>登陆</button>
+              </div>
+            </form>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+      </div>
+
+      <div class="modal fade" id="addDevice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="margin-top:150px; width:350px">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                <h3 style='text-align: center;'>友情提示</h3>
+              </h4>
+            </div>
+            <form action="" method='post'>
+              <div class="modal-body">
+                <h4>请在另一个设备上登陆您的账户！！！</h4>
+              </div>
+              <div class="modal-footer">
+                <p>嘿嘿嘿</p>
+              </div>
+            </form>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+      </div>
+
+      <div class="modal fade" id="sendMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="margin-top:150px; width:350px">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                发送消息
+              </h4>
+            </div>
+            <form action="" method='post'>
+              <div class="modal-body">
+                <textarea id='messageToBeSend' style="height:150px; width:100%"></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="sendPushMessage()">提交</button>
+              </div>
+            </form>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+      </div>
+
+      <div id='first_col' class="col-xs-1" style='margin: 0; padding: 0;'>
+        <div class="dark-frame">
+          <div style="margin:60px"></div>
+          <div class="row" style='margin: 20px 20px 20px 15px;'>
+            <a id="showMyDevices" class='control_button'><i class='customicon-comment-alt'></i></a>
+          </div>
+          <div class='row' style='margin: 20px 20px 20px 15px;'>
+            <a id="showMyInfo" class='control_button'><i class='customicon-cog-alt'></i></a>
+          </div>
+          <div class='bottom_one'>
+            <a data-toggle="modal" href="#login" class='control_button'><i class='customicon-adult'></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3" style='margin: 0; padding: 0;'>
+        <div class='grey-frame'>
+          <div class='myDevices'>
+              <ul id='devicesList'>
+              </ul>
+              <button data-toggle='modal' href='#addDevice' class="radio_button"><i class='customicon-plus' style="color:white;" ></i></button>
+          </div>
+          <div class='myInfo' style='display: none'>
+            <p>infomation</p>
+            <ul id='infoList'>
+            </ul>
+          </div>
+        </div>
+      </div>  
+      <div class='col-xs-8' style='margin: 0; padding: 0;'>
+        <div class='grey-frame' id='messageWrapper'>
+        </div>
+      </div>
+      <div class='right-bottom'>
+        <div id='demo4'>
+          <a href="#wheel2" class="wheel-button nw">
+            <i class="customicon-plus"></i>
+          </a>
+          <ul id="wheel2" class="wheel">
+            <li class="item"><a href=""><i class="customicon-refresh"></i></a></li>
+            <li class="item"><a href="#sendFile" onclick="emitInput()"><i class="customicon-file"></i></a></li>
+            <li class="item"><a href="#sendMessage" data-toggle='modal'><i class="customicon-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <input type="file" style='display:none' id='sendFile'>
+  </body>
+  <script src="js/render.js"></script>
+  <script src="js/tcp.js"></script>
+</html>

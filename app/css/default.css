@@ -1,0 +1,27 @@
+ul {
+	margin: 10px 0 10px 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	padding: 0;
+	margin: 0;
+}
+
+i {
+	font-size: 30px
+}
+
+* {
+	outline: 0;
+}
+
+html, body {
+	-webkit-app-region: drag;
+}
+
+hr {
+	border-color: gray;
+}

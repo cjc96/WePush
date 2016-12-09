@@ -1,0 +1,170 @@
+/* Required Stylesheets */
+.wheel-button {
+  position: relative;
+}
+
+.wheel {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 200px; /* this will determine the diameter of the circle  */
+  height: 200px; /* this will determine the diameter of the circle  */
+  visibility: hidden;
+  position: relative;
+  display: none;
+}
+
+.wheel li {
+  overflow: hidden;
+  float:left;
+}
+
+.wheel li a {
+  display: block;
+}
+
+/*.pointer {
+  color: #34495e;
+  font-family: 'Pacifico', cursive;
+  font-size: 22px;
+  margin-top: -15px;
+}
+*/
+.wheel-button, .wheel-button:visited {
+  background: #df4727; 
+  padding: 10px 11px;
+  text-align: center;
+  border-radius: 50px;
+  width: 48px;
+  height: 46px;
+  color: white;
+  display: block;
+  margin: 80px auto 20px;
+  border: 3px solid #92311e;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.wheel-button:hover{ 
+  color: white;
+}
+
+.wheel-button i, .wheel li i {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  display: block;
+  line-height: 140%;
+}
+
+.wheel-button.active i{
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg); /* IE 9 */
+  -webkit-transform: rotate(135deg); /* Safari and Chrome */
+}
+
+.wheel li a, .wheel li a:visited{
+  background: rgba(0,0,0,0.65);
+  border-radius: 50px;
+  padding: 10px;
+  text-align: center;
+  width: 48px;
+  height: 46px;
+  border: 1px solid black;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
+  color: white;
+  -moz-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.wheel li a:hover{
+  background: rgba(0,0,0,0.8);
+}
+
+/* DEMO #4 */
+
+#demo4 .main {
+  background: rgba(0,0,0,0.03);
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 10px 25px;
+  position: relative;
+  height: 350px;
+}
+
+#demo4 .wheel-button {
+  position: absolute;
+  margin: 0;
+}
+
+#demo4 .wheel-button.sw {
+  top: 5px;
+  right: 5px;
+}
+
+#demo4 .wheel-button.ne {
+  bottom: 5px;
+  left: 5px;
+}
+
+#demo4 .wheel-button.se {
+  top: 5px;
+  left: 5px;
+}
+
+#demo4 .wheel-button.nw {
+  bottom: 5px;
+  right: 5px;
+}
+
+#demo4 .wheel-button.n {
+  bottom: 5px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+#demo4 .wheel-button.s {
+  top: 5px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+#demo4 .wheel-button.e {
+  left: 5px;
+  top: 50%;
+  margin-top: -20px;
+}
+
+#demo4 .wheel-button.w {
+  right: 5px;
+  top: 50%;
+  margin-top: -20px;
+}
+
+#demo4 i {
+  font-size: 19px
+}
+
+a {
+  text-transform: none;
+  text-decoration: none;
+} 
+
+a:hover {
+  text-decoration:none;
+} 
+
+a:visited {
+  text-decoration: none;
+}
